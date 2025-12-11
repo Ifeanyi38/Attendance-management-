@@ -1,5 +1,5 @@
 
--- CREATE DATABASE
+-- CREATE DATABASE attendance system
 
 DROP DATABASE IF EXISTS attendance_system;
 CREATE DATABASE attendance_system;
