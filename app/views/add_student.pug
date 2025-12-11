@@ -1,0 +1,38 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/form.css")
+
+block content
+  .form-container
+    h1 Add New Student
+
+    form(action="/student/add", method="POST")
+
+      label(for="firstname") First Name
+      input(type="text", name="firstname", required)
+
+      label(for="lastname") Last Name
+      input(type="text", name="lastname", required)
+
+      label(for="dob") Date of Birth
+      input(type="date", name="dob", required)
+
+      label(for="studentid") Student ID
+      input(type="text", name="studentid", placeholder="e.g. S010", required)
+
+      label(for="class") Select Module/Class
+      select(name="class", required)
+        option(value="Module 1") Module 1
+        option(value="Module 2") Module 2
+        option(value="Module 3") Module 3
+        option(value="Module 4") Module 4
+        option(value="Module 5") Module 5
+
+      label(for="password") Password
+      input(type="password", name="password", required)
+
+      button(type="submit") Add Student
+
+    br
+    a(href="/admin/dashboard") ← Back to Admin Dashboard

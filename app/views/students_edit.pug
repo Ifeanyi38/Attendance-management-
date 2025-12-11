@@ -1,0 +1,31 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/admin_form.css")
+
+block content
+  .container
+    h1 Edit Student
+
+    form(action=`/admin/students/update/${student.id}`, method="POST")
+      label First Name
+      input(type="text", name="firstname", value=student.firstname)
+
+      label Last Name
+      input(type="text", name="lastname", value=student.lastname)
+
+      label DOB
+      input(type="date", name="dob", value=student.dob)
+
+      label Student ID
+      input(type="text", name="studentid", value=student.studentid)
+
+      label Module
+      input(type="text", name="module", value=student.module)
+
+      label Password
+      input(type="text", name="password", value=student.password)
+
+      button.submit-btn(type="submit") Update Student
+
+    a.back-btn(href="/admin/students") ← Back

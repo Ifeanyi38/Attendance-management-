@@ -1,0 +1,25 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/table.css")
+
+block content
+  h1 Attendance Overview for #{studentName}
+
+  if records.length > 0
+    table
+      thead
+        tr
+          th Module
+          th Total Classes
+          th Present
+          th Attendance %
+      tbody
+        each r in records
+          tr
+            td= r.moduleName
+            td= r.totalClasses
+            td= r.presentCount
+            td #{r.attendanceRate}%
+  else
+    p No attendance records found.

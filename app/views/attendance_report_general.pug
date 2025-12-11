@@ -1,0 +1,30 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/attendance.css")
+
+block content
+  .report-container
+    h1 Attendance Report - Module #{classId}
+
+    if records.length > 0
+      table
+        thead
+          tr
+            th First Name
+            th Last Name
+            th Student ID
+            th Date
+            th Status
+        tbody
+          each r in records
+            tr
+              td #{r.firstname}
+              td #{r.lastname}
+              td #{r.studentid}
+              td #{r.date}
+              td #{r.status}
+    else
+      p.no-data No attendance records yet for this module.
+
+    a.back-btn(href="/teachers_dashboard") ← Back to Dashboard

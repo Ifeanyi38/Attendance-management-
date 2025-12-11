@@ -1,0 +1,33 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/table.css")
+
+block content
+  .attendance-container
+    h1 Attendance for #{moduleName}
+
+    if students.length > 0
+      form(action=`/attend/mark/${classId}`, method="POST")
+        table
+          thead
+            tr
+              th First Name
+              th Last Name
+              th Status
+          tbody
+            each s in students
+              tr
+                td= s.firstname
+                td= s.lastname
+                td
+                  select(name=`status_${s.id}`)
+                    option(value="present") Present
+                    option(value="absent") Absent
+                    option(value="late") Late
+
+        button.submit-btn(type="submit") Submit Attendance
+    else
+      p.no-data No students assigned to #{moduleName}
+
+    a.back-btn(href="/teachers_dashboard") ← Back to Dashboard

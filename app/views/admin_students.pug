@@ -1,0 +1,38 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/table.css")
+
+block content
+  .list-container
+    h1 Students List
+
+    if students.length > 0
+      table
+        thead
+          tr
+            th First Name
+            th Last Name
+            th DOB
+            th Student ID
+            th Module
+            th Actions
+        tbody
+          each s in students
+            tr
+              td= s.firstname
+              td= s.lastname
+              td= new Date(s.dob).toDateString()
+              td= s.studentid
+              td= s.module
+              td
+                
+                a.action-btn.edit(href=`/admin/students/edit/${s.id}`) Edit
+
+                
+                form(action=`/admin/students/delete/${s.id}`, method="POST", style="display:inline")
+                  button.action-btn.delete(type="submit") Delete
+    else
+      p.no-data No Students Found
+
+    a.back-btn(href="/admin/dashboard") ← Back to Dashboard

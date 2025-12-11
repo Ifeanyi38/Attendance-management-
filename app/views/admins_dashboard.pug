@@ -1,0 +1,21 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/dashboard.css")
+
+block content
+  .admin-dashboard
+    h1 Admin Dashboard
+
+    p Manage all records below:
+
+    .action-links
+      a(href="/teacher/add") ➕ Add New Teacher
+
+      a(href="/student/add") ➕ Add New Student
+
+
+      hr
+
+      a(href="/admin/teachers") 👀 View Teachers List
+      a(href="/admin/students") 👀 View Students List

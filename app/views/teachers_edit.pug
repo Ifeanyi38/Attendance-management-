@@ -1,0 +1,28 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/admin_form.css")
+
+block content
+  .container
+    h1 Edit Teacher
+
+    form(action=`/admin/teachers/update/${teacher.id}`, method="POST")
+      label First Name
+      input(type="text", name="firstname", value=teacher.firstname)
+
+      label Last Name
+      input(type="text", name="lastname", value=teacher.lastname)
+
+      label DOB
+      input(type="date", name="dob", value=teacher.dob)
+
+      label Teacher ID
+      input(type="text", name="teacherid", value=teacher.teacherid)
+
+      label Password
+      input(type="text", name="password", value=teacher.password)
+
+      button.submit-btn(type="submit") Update Teacher
+
+    a.back-btn(href="/admin/teachers") ← Back

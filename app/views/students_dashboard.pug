@@ -1,0 +1,19 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/dashboard.css")
+
+block content
+  .admin-dashboard
+    h1 Welcome #{studentName}
+
+    p Today's Date: #{currentDate}
+
+    .action-links
+      a(href="/student/attendance/report") 📄 View Attendance Report
+
+      a(href="/student/attendance/module1") Module 1 Attendance
+      a(href="/student/attendance/module2") Module 2 Attendance
+      a(href="/student/attendance/module3") Module 3 Attendance
+      a(href="/student/attendance/module4") Module 4 Attendance
+      a(href="/student/attendance/module5") Module 5 Attendance

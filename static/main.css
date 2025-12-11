@@ -1,0 +1,105 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND */
+body {
+  background: #e8edf2;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+/* LANDING PAGE WRAPPER */
+.landing-container {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LOGO */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.app-logo {
+  width: 150px;
+  height: auto;
+}
+
+/* APP NAME */
+.app-name {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 10px;
+}
+
+/* TAGLINE */
+.tagline {
+  font-size: 16px;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* BUTTON CONTAINER */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  background: #3498db;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.login-btn:hover {
+  background: #217dbb;
+}
+
+/* SIGNUP BUTTON */
+.signup-btn {
+  background: #2ecc71;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.signup-btn:hover {
+  background: #239b56;
+}

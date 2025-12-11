@@ -1,0 +1,33 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/login.css")
+  
+
+block content
+  .container
+
+    a.logo-box(href="#")
+      img.logo(src="/static/logo.png", alt="Logo")
+
+    h1.login-title LOGIN
+
+    form(action="/login", method="POST")
+
+      //  ID Field (Student/Teacher ID)
+      label(for="userId") Student/Teacher ID
+      input#userId(type="text", name="userId", placeholder="Enter ID (e.g. S001 or T001)", required)
+
+      //  Password Field
+      label(for="password") Password
+      input#password(type="password", name="password", placeholder="Enter password", required)
+
+      //  ROLE DROPDOWN
+      label(for="role") Login As
+      select#role(name="role", required)
+        option(value="student") Student
+        option(value="teacher") teacher
+        option(value="admin") Admin
+
+      //  SUBMIT BUTTON
+      button.login-btn(type="submit") Login

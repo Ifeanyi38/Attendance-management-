@@ -1,0 +1,29 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/form.css")
+
+block content
+  .form-container
+    h1 Edit Student
+
+    form(action=`/admin/students/edit/${student.id}`, method="POST")
+
+      label First Name
+      input(type="text", name="firstname", value=student.firstname, required)
+
+      label Last Name
+      input(type="text", name="lastname", value=student.lastname, required)
+
+      label Date of Birth
+      input(type="date", name="dob", value=student.dob, required)
+
+      label Class/Module
+      input(type="text", name="class", value=student.class, required)
+
+      label Password
+      input(type="text", name="password", value=student.password, required)
+
+      button(type="submit") Save Changes
+
+    a(href="/admin/students") ← Back

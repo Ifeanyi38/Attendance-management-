@@ -1,0 +1,49 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+thead {
+  background: var(--accent);
+  color: #fff;
+}
+
+thead th {
+  padding: 14px;
+  text-align: left;
+  font-size: 15px;
+}
+
+tbody tr {
+  background: #fff;
+}
+
+tbody tr:hover {
+  background: #f0f4ff;
+  transition: 0.2s;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e3e6ee;
+  font-size: 14px;
+}
+
+/* ACTION BUTTONS */
+.action-btn {
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  margin-right: 5px;
+}
+
+.action-btn.edit {
+  background: #25a266;
+}
+
+.action-btn.delete {
+  background: #c0392b;
+}

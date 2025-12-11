@@ -1,0 +1,30 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/form.css")
+
+block content
+  .form-container
+    h1 Add New Teacher
+
+    form(action="/teacher/add", method="POST")
+
+      label(for="firstname") First Name
+      input(type="text", name="firstname", required)
+
+      label(for="lastname") Last Name
+      input(type="text", name="lastname", required)
+
+      label(for="dob") Date of Birth
+      input(type="date", name="dob", required)
+
+      label(for="teacherid") Teacher ID
+      input(type="text", name="teacherid", placeholder="e.g. T010", required)
+
+      label(for="password") Password
+      input(type="password", name="password", required)
+
+      button(type="submit") Add Teacher
+
+    br
+    a(href="/admin/dashboard") ← Back to Admin Dashboard

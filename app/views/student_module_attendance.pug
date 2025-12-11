@@ -1,0 +1,21 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/table.css")
+
+block content
+  h1 Attendance for #{moduleName}
+
+  if records.length > 0
+    table
+      thead
+        tr
+          th Date
+          th Status
+      tbody
+        each r in records
+          tr
+            td= r.date
+            td= r.status
+  else
+    p No attendance found for this module.

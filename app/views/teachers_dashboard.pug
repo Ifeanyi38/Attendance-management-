@@ -1,0 +1,29 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/teacher_dashboard.css")
+
+block content
+  .container
+
+    //  WELCOME SECTION 
+    .welcome-box
+      h2.welcome-text Welcome,
+      // Dynamic teacher name from session
+      h2.teacher-name #{teacherName}
+      // Dynamic date passed from controller
+      p.dashboard-date Date: #{currentDate}
+
+    h1.dashboard-title Teacher Dashboard
+
+    // Instruction text
+    p.dashboard-info Select any module below to mark attendance or view attendance reports.
+
+    
+    // MODULE LIST
+    
+    each moduleId in [1,2,3,4,5]
+      .class-box
+        span.class-name Module #{moduleId}
+        a.mark-btn(href=`/attend/mark/${moduleId}`) Mark Attendance
+        a.report-btn(href=`/attend/report/${moduleId}`) View Report

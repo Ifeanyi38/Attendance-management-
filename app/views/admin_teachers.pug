@@ -1,0 +1,37 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/table.css")
+  
+
+block content
+  .list-container
+    h1 Teachers List
+
+    if teachers.length > 0
+      table
+        thead
+          tr
+            th First Name
+            th Last Name
+            th DOB
+            th Teacher ID
+            th Actions
+        tbody
+          each t in teachers
+            tr
+              td= t.firstname
+              td= t.lastname
+              td= new Date(t.dob).toDateString()
+              td= t.teacherid
+              td
+                
+                a.action-btn.edit(href=`/admin/teachers/edit/${t.id}`) Edit
+
+                
+                form(action=`/admin/teachers/delete/${t.id}`, method="POST", style="display:inline")
+                  button.action-btn.delete(type="submit") Delete
+    else
+      p.no-data No Teachers Found
+
+    a.back-btn(href="/admin/dashboard") ← Back to Dashboard

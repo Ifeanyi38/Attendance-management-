@@ -1,0 +1,40 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/report.css")
+
+block content
+  .report-container
+    h1 Attendance Report
+
+    form(method="GET", action="/attend/report")
+      label(for="classSelect") Select Module:
+      select#classSelect(name="class_id" required)
+        option(value="") -- Choose Module --
+        each cls in classes
+          option(value=cls.id) #{cls.name}
+
+      button.filter-btn(type="submit") View Report
+
+    if records && records.length > 0
+      table
+        thead
+          tr
+            th Student Name
+            th Class
+            th Date
+            th Status
+        tbody
+          each rec in records
+            tr
+              td #{rec.firstname} #{rec.lastname}
+              td #{rec.class_name}
+              td #{rec.date}
+              td.status(class=rec.status)= rec.status
+
+    else if records
+      p.no-data No attendance records found for this module.
+    else
+      p.info Select a module to view attendance records.
+
+    a.back-btn(href="/teachers_dashboard") ← Back to Dashboard

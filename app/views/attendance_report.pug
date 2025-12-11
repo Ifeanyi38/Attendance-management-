@@ -1,0 +1,27 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/static/attendance.css")
+
+block content
+  .container
+    h1 Attendance Report - #{moduleName}
+
+    if records.length > 0
+      table
+        thead
+          tr
+            th Student
+            th Date
+            th Status
+
+        tbody
+          each rec in records
+            tr
+              td #{rec.firstname} #{rec.lastname}
+              td #{rec.date.toLocaleDateString ? rec.date.toLocaleDateString() : rec.date}
+              td.status-tag(class=rec.status)= rec.status
+    else
+      p.no-data No attendance data found for this module
+
+    a.back-btn(href="/teachers_dashboard") ← Back to Dashboard
