@@ -1,3 +1,3 @@
 // index.js (ROOT)
-console.log(">>> Starting Application...");
+console.log(">>> Starting...");
 require("./app/app");
