@@ -27,7 +27,7 @@ npm install
 
 ## Configure database connection
 
-COnfigure environmental variables in `.env` file. If not then rename `env_sample.txt` to `.env`. Backup contents if needed
+Configure environmental variables in `.env` file. If not then rename `env_sample.txt` to `.env`. Backup contents if needed
 
 ```
 DB_HOST=
